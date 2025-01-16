@@ -1,6 +1,12 @@
-import type { Metadata } from "next";
+
+
+//import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+
+//import "./globals.css";
+import {Header} from "./components/shared/Header";
+import {Footer} from "./components/shared/Footer";
+import { Description } from "./components/home/Description";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,10 +18,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+/*export const metadata: Metadata = {
   title: "Future World",
   description: "Store Virtual",
-};
+};*/
 
 export default function RootLayout({
   children,
@@ -24,27 +30,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+          
+      
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-
-        <header>
-          <nav>
-            <ul>
-              <a href="/">
-              <li>Home</li>
-              </a>
-              
-              <a href="/store">
-              <li>Store</li>
-              </a>
-              
-            </ul>
-          </nav>  
-        </header>  
-
+        <Header />  
+        
+       
 
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -1,11 +1,18 @@
 
 import Image from "next/image";
+import { Description } from "./components/home/Description";
+import { Hero } from "./components/home/Hero";
+import { MainProducts } from "./components/home/MainProducts";
 
 
 export default function Home() {
+  console.log("Hola mundo");
   return (
    <main >
-     <h1 > Hola mundo </h1>
+     
+     <Hero />
+     <Description />
+     <MainProducts />
 
    </main>
    )
